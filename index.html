@@ -90,6 +90,16 @@
       transform: scale(1.05);
     }
 
+    /* Flash effect for Register button */
+    .flash {
+      animation: flash 1.2s infinite alternate;
+    }
+
+    @keyframes flash {
+      0% { box-shadow: 0 0 10px yellow, 0 0 20px yellow; }
+      100% { box-shadow: 0 0 25px orange, 0 0 45px red; }
+    }
+
     .countdown {
       font-size: 20px;
       margin-top: 20px;
@@ -143,8 +153,8 @@
 
     <div class="headline">Join India's Smartest Strategy Community</div>
 
-    <!-- Register Now Button -->
-    <a href="https://a7jalx9.com/#/register?invitationCode=417232628556" class="btn" target="_blank">
+    <!-- Register Now Button (Flashing) -->
+    <a href="https://jgame1.com/#/register?invitationCode=417232628556" class="btn flash" target="_blank">
       💰 REGISTER NOW
     </a>
 
@@ -173,7 +183,7 @@
     </div>
   </div>
 
-  <!-- Working Countdown + Redirect -->
+  <!-- Countdown Redirect Script -->
   <script>
     let seconds = 30;
     const counter = document.getElementById("seconds");
@@ -189,7 +199,7 @@
       }
     }, 1000);
 
-    // Cancel redirect if user clicks the button
+    // Stop redirect if Telegram button clicked
     document.getElementById("joinBtn").addEventListener("click", () => {
       clearInterval(timer);
     });
